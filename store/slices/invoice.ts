@@ -23,16 +23,13 @@ export const createInvoiceSlice: StateCreator<InvoiceSlice> = (set, get) => ({
       return invoice;
     });
 
-    set({ invoices: transformedInvoices });
+    set({ invoices: transformedInvoices.reverse() });
   },
   deleteInvoice: (id: number) => {
     const invoices = get().invoices;
 
     const filterInvoices = invoices.filter((invoice) => {
       return invoice.id !== id;
-    }).map(invoice => {
-      invoice.id = invoice.id - 1;
-      return invoice
     });
 
     set({
@@ -59,11 +56,10 @@ export const createInvoiceSlice: StateCreator<InvoiceSlice> = (set, get) => ({
       return;
     }
 
+    invoice.id = invoices.length + 1;
+
     set({
-      invoices: [invoice, ...invoices].map((invoice, idx) => {
-        invoice.id = idx + 1;
-        return invoice;
-      }),
+      invoices: [invoice, ...invoices]
     });
   },
   createOrUpdateChargeOnInvoice: (invoiceID: number, charge: Charge) => {

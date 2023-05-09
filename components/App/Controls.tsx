@@ -180,6 +180,7 @@ const MoreDropDown: React.FC<MoreDropDownProps> = (props) => {
             {data.map((item) => (
               <Menu.Item
                 as={Button}
+                key={item.title}
                 className="text-gray-600 w-full capitalize justify-between hover:bg-indigo-600 hover:text-white"
                 onClick={item.action}
               >
