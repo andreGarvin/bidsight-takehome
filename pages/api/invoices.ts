@@ -16,7 +16,7 @@ const createCharges = () => {
 const createInvoice = () => {
   return {
     id: faker.number.int(),
-    title: faker.lorem.word(),
+    name: faker.lorem.word(),
     status: faker.helpers.arrayElement(["paid", "draft", "outstanding"]),
     due_date: faker.date.between({ from: new Date(), to: dateFns.addDays(new Date(), 5) }),
     charges: createCharges(),
@@ -27,7 +27,7 @@ const createInvoice = () => {
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const invoices: any[] = [];
 
-  for (let i = 0; i <= 10; i++) {
+  for (let i = 0; i < 10; i++) {
     invoices.push(createInvoice());
   }
 
