@@ -27,7 +27,7 @@ const AppHead: React.FC<AppHeadType> = (props) => {
       <link rel="icon" type="image/png" href={favico} />
       <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
 
-      {/* <link rel="preconnect" href={process.env.NEXT_PUBLIC_GRAPHQL_BACKEND} /> */}
+      <link rel="preconnect" href={process.env.NEXT_PUBLIC_API_URL} />
     </NextHead>
   );
 }

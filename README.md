@@ -12,6 +12,7 @@ Before running this project make sure you have nvm installed, [Here is the docum
 1. Clone the repository.
 1. Switch to the `develop` or `feat/<branch name>` branch.
 1. Install dependencies using `npm install` for this project
+1. Run `nvm use` to use the correct node version for this project
 1. Then run `npm run build` to get a build output of the project
 
 Make sure to create a `.env.local` file for all your secrets needed for the application, just copy and paste whats in the `.env` file.
