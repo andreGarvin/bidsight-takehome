@@ -24,7 +24,7 @@ const createInvoice = () => {
 }
 
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+export default function handler(req, res: NextApiResponse) {
   const invoices: any[] = [];
 
   for (let i = 0; i < 10; i++) {
