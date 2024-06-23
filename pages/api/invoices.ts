@@ -31,5 +31,5 @@ export default function handler(req, res: NextApiResponse) {
     invoices.push(createInvoice());
   }
 
-  res.json(invoices);
+  res.status(200).json(invoices);
 }
